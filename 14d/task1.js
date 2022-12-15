@@ -70,7 +70,7 @@ const moveNext = () => {
     // resting
     restingSands += 1;
     matrix[x][y] = "o";
-    console.log("one resting", { restingSands, x, y });
+    // console.log("one resting", { restingSands, x, y });
     fallingPosition = sandSpawnsAt;
   }
 };
@@ -119,7 +119,7 @@ const doStuff = async () => {
   }
 
   startSandSpawn();
-  // visualize();
+  visualize();
 
   console.log("restingSands", restingSands);
 };
