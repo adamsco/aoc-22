@@ -51,7 +51,7 @@ const getRepeatingLength = () => {
   }
 
   let l = topFloor - 1;
-  let max = l; // Math.floor((theMatrix[0].length / 2) - 5)
+  let max = l;
   let repeatLength = max;
   for (repeatLength; repeatLength > inputSequence.length / 5; repeatLength--) {
     let noDiff = true;
@@ -72,42 +72,6 @@ const getRepeatingLength = () => {
     }
   }
   return -1;
-};
-const heights = [0];
-const heightDiffs = [0];
-const matchingCounts = [0];
-
-let smallestDiff = 2;
-const isSequenceRepeating = () => {
-  const diff = Math.min(
-    inputSequence.length - sequencePointer,
-    sequencePointer
-  );
-  if (diff <= smallestDiff) {
-    smallestDiff = diff;
-    console.log("new diff", { smallestDiff, diff, sequencePointer });
-  }
-  if (diff <= smallestDiff) {
-    const nextValue = topFloor + missingTop - heights[heights.length - 1];
-    heights.push(topFloor + missingTop);
-    heightDiffs.push(nextValue);
-    matchingCounts.push(count);
-
-    const repeatingHeights = heightDiffs.filter(
-      (h, i) => heightDiffs.indexOf(h) !== i
-    );
-    const repeatingHeightsIndices = repeatingHeights.map((rh) =>
-      heightDiffs.indexOf(rh)
-    );
-
-    console.log("sequencecomplete", {
-      heightDiffs,
-      repeatingHeights,
-      repeatingHeightsIndices,
-      matchingCounts,
-    });
-    repeatingPatternFound = true;
-  }
 };
 
 const updateSequencePointer = () => {
@@ -209,8 +173,6 @@ const simulateRock = () => {
     if (debugCycle && andSpecificDebug) {
       console.log("cycle", rockPointer);
     }
-    // console.log("rp", currentRockPosition.y);
-
     // wind
     if (dirIsLeft()) {
       if (currentRockPosition.x > 0) {
@@ -311,12 +273,6 @@ const verify = () => {
   });
   console.log("highest is", top + 1);
 };
-
-let perc = 0;
-// let score1366 = 0;
-// let score802 = 0;
-// let score283 = 0;
-// let scoreX283 = 0;
 
 let sr1 = 0;
 let sr2 = 0;
