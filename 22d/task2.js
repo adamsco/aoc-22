@@ -582,12 +582,3 @@ const doStuff = async () => {
 };
 
 doStuff();
-
-// 159034 - high
-// 179009 - high...
-
-// 16214 - low
-
-// 148279 - also no
-// 147245
-// 28294 - also no
