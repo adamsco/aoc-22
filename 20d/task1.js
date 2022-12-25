@@ -1,4 +1,3 @@
-const { isObject } = require("util");
 const { CreateLineReader } = require("../_util/LineReader");
 
 const indicesToCheck = [1000, 2000, 3000];
